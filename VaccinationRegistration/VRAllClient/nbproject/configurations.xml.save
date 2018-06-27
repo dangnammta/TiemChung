@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>inc/Configuration.h</itemPath>
+      <itemPath>inc/ServerApp.h</itemPath>
+      <itemPath>inc/TClientTypes.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>src/Configuration.cpp</itemPath>
+      <itemPath>src/ServerApp.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="thrift" projectFiles="true">
+      <logicalFolder name="gen-cpp" displayName="gen-cpp" projectFiles="true">
+        <itemPath>thrift/gen-cpp/TDIPImporterAppsService.cpp</itemPath>
+        <itemPath>thrift/gen-cpp/TDIPImporterAppsService.h</itemPath>
+        <itemPath>thrift/gen-cpp/dip_response_constants.cpp</itemPath>
+        <itemPath>thrift/gen-cpp/dip_response_constants.h</itemPath>
+        <itemPath>thrift/gen-cpp/dip_response_types.cpp</itemPath>
+        <itemPath>thrift/gen-cpp/dip_response_types.h</itemPath>
+        <itemPath>thrift/gen-cpp/dip_shared_constants.cpp</itemPath>
+        <itemPath>thrift/gen-cpp/dip_shared_constants.h</itemPath>
+        <itemPath>thrift/gen-cpp/dip_shared_types.cpp</itemPath>
+        <itemPath>thrift/gen-cpp/dip_shared_types.h</itemPath>
+        <itemPath>thrift/gen-cpp/dipimporterappsservice_constants.cpp</itemPath>
+        <itemPath>thrift/gen-cpp/dipimporterappsservice_constants.h</itemPath>
+        <itemPath>thrift/gen-cpp/dipimporterappsservice_types.cpp</itemPath>
+        <itemPath>thrift/gen-cpp/dipimporterappsservice_types.h</itemPath>
+      </logicalFolder>
+      <itemPath>thrift/dipimporterappsservice.thrift</itemPath>
+      <itemPath>thrift/thriftgen</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>dipallclient.properties</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../UPEent/inc</pElem>
+            <pElem>inc</pElem>
+            <pElem>thrift/gen-cpp</pElem>
+            <pElem>../UPBoost/inc</pElem>
+            <pElem>../UPThrift/inc</pElem>
+            <pElem>../UPThrift/thrift_src/</pElem>
+            <pElem>../UPPoco/inc</pElem>
+            <pElem>../UPCaching/inc/sparsehash</pElem>
+            <pElem>../UPCaching/inc</pElem>
+            <pElem>../UPCaching</pElem>
+            <pElem>../UPBase</pElem>
+            <pElem>../UPBase/inc</pElem>
+            <pElem>../UPBase/upframework</pElem>
+            <pElem>../UPBase/upframework/upbase/if/gen-cpp</pElem>
+            <pElem>../UPThrift/thrift_src/thrift</pElem>
+            <pElem>../UPHashing/inc</pElem>
+            <pElem>../UPStorage/inc</pElem>
+            <pElem>../UPStoreAppCommon/inc</pElem>
+            <pElem>../UPStoreAppCommon/if/thrift/gen-cpp</pElem>
+            <pElem>../UPStoreAppCommon</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>        </ccTool>
+        <linkerTool>
+          <output>bin/fballclientd</output>
+          <linkerLibItems>
+            <linkerLibFileItem>../UPStoreAppCommon/lib/libupstoreappcommond.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPStorage/lib/libupstoraged.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPCaching/lib/libupcachingd.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPHashing/lib/libuphashingd.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPBase/lib/libupbased.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPThrift/lib/libupthriftd.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPPoco/lib/libuppocod.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPEvent/lib/libupeventd.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPMalloc/lib/libupmallocd.a</linkerLibFileItem>
+            <linkerOptionItem>-lpthread -ldl -lrt</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="dipallclient.properties" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="inc/Configuration.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="inc/ServerApp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="inc/TClientTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Configuration.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ServerApp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="thrift/dipimporterappsservice.thrift"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/TDIPImporterAppsService.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/TDIPImporterAppsService.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_response_constants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_response_constants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_response_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_response_types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_shared_constants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_shared_constants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_shared_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_shared_types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dipimporterappsservice_constants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dipimporterappsservice_constants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dipimporterappsservice_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dipimporterappsservice_types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/thriftgen" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../UPEvent/inc</pElem>
+            <pElem>inc</pElem>
+            <pElem>thrift/gen-cpp</pElem>
+            <pElem>../UPBoost/inc</pElem>
+            <pElem>../UPThrift/inc</pElem>
+            <pElem>../UPThrift/thrift_src/</pElem>
+            <pElem>../UPPoco/inc</pElem>
+            <pElem>../UPCaching/inc/sparsehash</pElem>
+            <pElem>../UPCaching/inc</pElem>
+            <pElem>../UPCaching</pElem>
+            <pElem>../UPBase</pElem>
+            <pElem>../UPBase/inc</pElem>
+            <pElem>../UPBase/upframework</pElem>
+            <pElem>../UPBase/upframework/upbase/if/gen-cpp</pElem>
+            <pElem>../UPThrift/thrift_src/thrift</pElem>
+            <pElem>../UPHashing/inc</pElem>
+            <pElem>../UPStorage/inc</pElem>
+            <pElem>../UPStoreAppCommon/inc</pElem>
+            <pElem>../UPStoreAppCommon/if/thrift/gen-cpp</pElem>
+            <pElem>../UPStoreAppCommon</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>bin/fballclient</output>
+          <linkerLibItems>
+            <linkerLibFileItem>../UPStoreAppCommon/lib/libupstoreappcommon.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPStorage/lib/libupstorage.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPCaching/lib/libupcaching.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPHashing/lib/libuphashing.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPBase/lib/libupbase.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPThrift/lib/libupthrift.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPPoco/lib/libuppoco.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPEvent/lib/libupevent.a</linkerLibFileItem>
+            <linkerLibFileItem>../UPMalloc/lib/libupmalloc.a</linkerLibFileItem>
+            <linkerOptionItem>-lpthread -ldl -lrt</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="dipallclient.properties" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="inc/Configuration.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="inc/ServerApp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="inc/TClientTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Configuration.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ServerApp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="thrift/dipimporterappsservice.thrift"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/TDIPImporterAppsService.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/TDIPImporterAppsService.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_response_constants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_response_constants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_response_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_response_types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_shared_constants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_shared_constants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_shared_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dip_shared_types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dipimporterappsservice_constants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dipimporterappsservice_constants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dipimporterappsservice_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="thrift/gen-cpp/dipimporterappsservice_types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="thrift/thriftgen" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

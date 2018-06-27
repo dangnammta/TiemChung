@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="DIP_Backend">
+            <file>file:/home/namdv/devel/WebBaseServer/src/httpservice/WebServer.java</file>
+            <file>file:/home/namdv/devel/WebBaseServer/src/webservlet/HomeServlet.java</file>
+            <file>file:/home/namdv/devel/WebBaseServer/src/render/RenderMain.java</file>
+            <file>file:/home/namdv/devel/WebBaseServer/src/baseclass/ServletBase.java</file>
+            <file>file:/home/namdv/devel/WebBaseServer/html/js/logbca-1.01.js</file>
+        </group>
+        <group>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/webservlet/AjaxServlet.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/home_tiemchung.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/monitor_admin.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/render/RenderMain.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/webservlet/HomeServlet.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/create_event.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/home_listevent.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/service/utils/Utils.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/monitor_tiemchung.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/webservlet/test.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/register.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/register_design.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/home_design.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/css/tiemchung.css</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/login.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/conf/configuration/Configuration.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/register_design_success.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/conf/development.config.ini</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/conf/production.config.ini</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/service/utils/HttpRequestUtils.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/result.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/sns/backend/transport/VRVaccinationManagerServiceClient.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/register_admin.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/css/bootstrap.min.css</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/js/export2excel.js</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/js/jszip4exel.js</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/view/html/register_admin_design.xtm</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/staticdata/user.json</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/js/underscore.js</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/crdhn/vr/thrift/response/TError.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/src/sns/backend/transport/VRRegistrationManagerServiceClient.java</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/css/bootstrap-dialog.css</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/js/bootstrap-dialog.min.js</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/js/autocomplete_1.js</file>
+            <file>file:/home/namdv/devel/VaccinationRegistration/WebServer/html/tc/js/tiemchung_admin.js</file>
+        </group>
+        <group name="DIP"/>
+    </open-files>
+</project-private>

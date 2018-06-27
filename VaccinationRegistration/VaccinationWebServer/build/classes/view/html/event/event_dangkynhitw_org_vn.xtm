@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Quản lý đợt tiêm chủng</title>
+      <!-- Bootstrap core CSS -->
+      <link href="{{static_url}}/css/bootstrap.min.css" rel="stylesheet">
+      <link href="{{static_url}}/css/bootstrap-dialog.min.css" rel="stylesheet">
+      <link href="{{static_url}}/css/font-awesome.min.css" rel="stylesheet">
+      <link href="{{static_url}}/css/tiemchung.css" rel="stylesheet">
+   </head>
+   <body>
+<div style="display:none;" class="loading">Loading&#8230;</div>
+      <div id="wrapper">
+         <div class="header_ts"><div class="header_wrap">
+                <div class="header_logo1"><h1 class="header_h"><a href="/" class="header_logo"></a></h1></div>
+                <span class="language"><span  class="navbtn"><a href="javascript:void(0);" onclick="logout();">{{username}} | Thoát</a></span></span>
+            </div></div>
+         <div id="page-wrapper" style="min-height: 368px; margin:0px;">
+            <!-- /.row -->
+            <div class="row" style="margin:30px;>
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Danh sách các trung tâm đăng ký tiêm chủng
+                        </div>
+                    <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                                <div id="DataTables_Table_0_length" class="dataTables_length">
+                                                    <label>
+                                                        <a onclick="tc.registerCentre(); return false;" href="javscript:void(0);" class="btn btn-primary">
+                                                            <i class="fa fa-plus-circle icon-white"></i>
+                                                            Đăng ký mới
+                                                        </a>
+                                                    </label>
+                                            </div>
+                                </div>
+                                <div id="listEvent" class="col-lg-7">
+                                    <table id="table_event" class="table table-striped table-bordered table-hover" style="margin-top:10px; border: 1px solid #e7e7e7;">
+                                    <thead>
+                                      <tr>
+                                        <th>STT</th>
+                                        <th>Tên đợt tiêm chủng</th>
+                                        <th>Tổng số mũi tiêm</th>
+                                        <th>Ngày bắt đầu</th>
+                                        <th>Trạng thái</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="content_event">
+                                        {{LISTEVENT}}
+                                    </tbody>
+                                </table>
+                                {{MESSAGE_EMPTY}}
+                                 </div>
+                                 <div class="col-lg-5">
+                                    <div class="text-center">
+                                        <img src="{{static_url}}/image/img.png"  alt="Tiêm chủng">
+
+                                    </div>
+                                </div><!-- /.col-lg-6 -->
+                        </div>
+                    <!-- /.panel-body -->
+                    </div>
+                </div><!-- /.col-lg-6 -->
+                </div>
+
+                <!-- end div page-wrapper -->
+            </div>
+        </div>
+        <div style="text-align: center; margin:20px;">
+              <p>{{text_copyright}} © CRD-HN</p>
+        </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+    </body>
+</html>

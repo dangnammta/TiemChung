@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="html" lang="en-US">
+	<head>
+                <link rel="shortcut icon" href="{{static_url}}/image/favicon.ico" type="image/x-icon">
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="2014.2.1.284"/>
+		<title>Phiếu xác nhận đăng ký tiêm chủng</title>
+                <!-- Bootstrap core CSS -->
+        <link href="{{static_url}}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrap-dialog.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/metisMenu.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrapstart.css" rel="stylesheet">
+        <link href="{{static_url}}/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/tiemchung.css" rel="stylesheet">
+		<style type="text/css">
+			body {background-color: #fff}
+			.container {
+				width:1000px;
+				margin:0px auto;
+				background-color:white;
+				}
+		</style>
+	</head>
+	<body>
+            <div style="display:none;" class="loading">Loading&#8230;</div>
+            <div {{id_mesage_error}} >
+                <div class="header_ts"><div class="header_wrap">
+                    <div class="header_logo1"><h1 class="header_h"><a href="/" class="header_logo"></a></h1></div>
+                </div></div>
+            <div style="min-height: 368px; margin:0px;">
+                <div class="row" style="margin-left:150px; margin-right:150px;">
+                      <div class="col-lg-12">
+                         <h1 style="text-align:center">THÔNG BÁO</h1>
+                         <h2 style="text-align:center">{{mesage_error}}</h2>
+                      </div>
+                </div>
+            </div>
+            </div>
+        <div {{showcontent}} id="wrapper">
+            <div class="header_ts"><div class="header_wrap">
+                <div class="header_logo1"><h1 class="header_h"><a href="/" class="header_logo"></a></h1></div>
+                <span {{show_manager}} class="language">
+                    <span  class="navbtn"><a  href="/admin/monitor">Quản lý danh sách</a></span>
+                    <span  class="navbtn"><a href="javascript:void(0);" onclick="logout();">{{username}} | Thoát</a></span>
+                    </span>
+            </div></div>
+            <div id="page-wrapper" style=" margin:0px;">
+               <div class="row" style="margin-left:80px; margin-right:80px;">
+                  <div class="col-lg-12">
+                     <h1 style="text-align:center">PHIẾU XÁC NHẬN ĐĂNG KÝ TIÊM CHỦNG</h1>
+                  </div>
+                  <div style="text-align:center" class="col-lg-12">
+                     <label class="col-lg-12">Mã số xác nhận thành công:<span  style="color: red; font-size:26px;">  {{key_register}}</span></label>
+                  </div>
+                  <div style="margin-top:10px;" class="col-lg-12">
+                     <label style="font-style" class="col-lg-12">Bệnh viện Nhi Trung ương đã chấp nhận yêu cầu đăng ký tiêm chủng Vắc-xin Pentaxim của quý khách, thông tin cơ bản như sau:</label>
+                  </div>
+                  <div style="margin-top: 10px;" class="col-lg-12">
+                     <label class="col-lg-12">I. Thông tin của Trẻ</label>
+                  </div>
+                  <div class="col-lg-12" >
+                     <label class="col-lg-4" style="margin-left:65px; font-weight: 100; " >-  Họ và tên (theo giấy khai sinh):</label>
+                     <label class="col-lg-6" style="font-weight: 100; " >{{nameChild}}</label>
+                  </div>
+                  <div class="col-lg-12" >
+                     <label class="col-lg-4" style="margin-left:65px; font-weight: 100; " >-  Ngày tháng năm sinh:</label>
+                     <label class="col-lg-6" style="font-weight: 100; " >{{birthdayChild}}</label>
+                  </div>
+<!-- Thong tin nguoi dua tre di tiem-->
+                  <div style="margin-top: 10px;" class="col-lg-12">
+                     <label class="col-lg-12">II. Thông tin người đưa trẻ đi tiêm (Phụ huynh/Người giám hộ):</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-4" style="margin-left:65px; font-weight: 100; " >-  Họ tên:</label>
+                     <label class="col-lg-6" style="font-weight: 100; ">{{name_parent}}</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label  class="col-lg-4" style="margin-left:65px; font-weight: 100; ">-  Số CMND/hộ chiếu:</label>
+                     <label class="col-lg-6" style="font-weight: 100; " >{{pin_parent}}</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-4"  style="margin-left:65px; font-weight: 100; " >-  Số điện thoại liên lạc:</label>
+                     <label class="col-lg-6" style="font-weight: 100; " >{{phone_parent}}</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-4" style="margin-left:65px; font-weight: 100; " >-  Địa chỉ:</label>
+                     <label class="col-lg-6" style="font-weight: 100; " >{{address}}</label>
+                  </div>
+<!--III thoi gian va dia diem tiem chung-->
+                  <div style="margin-top: 10px;"  class="col-lg-12">
+                     <label class="col-lg-12">III. Thời gian và địa điểm tiêm chủng:</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-4" style="margin-left:65px; font-weight: 100;" >-  Thời gian:</label>
+                     <label class="col-lg-6" style="font-weight: 100; ">{{injection}}</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-4" style="margin-left:65px; font-weight: 100; " >-  Địa điểm:</label>
+                     <label class="col-lg-6" style="font-weight: 100; " >Phòng tư vấn và tiêm chủng Vắc-xin</label>
+                  </div>
+                  <div class="col-lg-12">
+                  <label class="col-lg-12" style="margin-left:65px; font-weight: 100; " >   Bệnh viện Nhi Trung ương, ngõ 80 phố Chùa Láng, Đống Đa, Hà Nội</label>
+                  </div>
+<!--IV Khi di mang theo giay to-->
+                  <div style="margin-top: 10px;"  class="col-lg-12">
+                     <label class="col-lg-12">IV. Khi đi  mang theo giấy tờ:</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-6" style=" margin-left:65px; font-weight: 100; " >-  Giấy khai sinh/giấy chứng sinh</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-6" style=" margin-left:65px; font-weight: 100; " >-  Sổ tiêm chủng của trẻ</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-6" style=" margin-left:65px; font-weight: 100; " >-  CMND/hộ chiếu của người đưa trẻ đi tiêm</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-6" style=" margin-left:65px; font-weight: 100; ">-  Mã số xác nhận đăng ký thành công</label>
+                  </div>
+                  <div style="margin-top: 50px;"  class="col-lg-12">
+                     <label class="col-lg-12">Quý khách lưu ý:</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-12" style="font-weight: 100;" >
+                  1. Các hình thức xác nhận đăng ký bao gồm: phiếu hẹn tiêm chủng, ảnh chụp mã số màn hình đăng ký hoặc ghi nhớ mã số đăng ký tiêm chủng thành công của trẻ đều được chấp nhận.</label>
+                  </div>
+                  <div class="col-lg-12">
+                     <label class="col-lg-12" style="font-weight: 100;" >2. Mã số đăng ký chỉ được sử dụng 1 lần duy nhất.</label>
+                  </div>
+                  <div class="col-lg-12" style="text-align:left; padding-top:50px;">
+                  <p  style="font-weight: 700;">Phòng Tư vấn và tiêm chủng vắc xin</p>
+                    Địa chỉ: Ngõ 80, phố Chùa Láng, Hà Nội<br>
+                                Qua cổng số 3 - Bệnh viện Nhi Trung ương.<br>
+                    Thời gian làm việc: Các ngày trong tuần từ Thứ Hai đến Thứ Sáu.<br>
+                                             Sáng: 08h00 – 16h30.<br>
+                                             Chiều: 13h30 – 16h30.<br>
+                    Điện thoại liên hệ: 04.62770895 – 090489495<br>
+                    </div>
+               </div>
+             </div>
+             <div {{showcontent}} style=" padding-top:10px; text-align: center;" >
+                     <a  href="javascript:void(0);" onclick="tc.print('page-wrapper');" class="btn btn-default">
+                     <i class="fa fa-print"></i>
+                     In phiếu
+                     </a>
+            </div>
+            
+            <div style="font-family: helvetica,serif;" class="footer col-lg-12">
+                <div style=" float: left; ">
+                    <p>&copy; 2015 - BỆNH VIỆN NHI TRUNG ƯƠNG <br>Địa chỉ: 18/879 La Thành - Đống Đa - Hà Nội <br>Điện thoại: (84.4) 6 273 8573  - Fax: (84.4) 6 273 8573 <br></p>
+                </div>
+                <div style=" float:right; ">
+                    <div style="text-align:left;">
+                                    <p>PHÒNG TƯ VẤN VÀ TIÊM CHỦNG VẮC XIN<br>Địa chỉ: Ngõ 80, phố Chùa Láng, Hà Nội
+                                    (Qua cổng số 1<br> đi thẳng 300m hoặc cổng số 2 đi thẳng, rẽ trái 100m)<br>Điện thoại liên hệ:(84.4) 62770895 &ndash; 090489495</p>
+                                </div>
+                </div>
+            </div>
+
+
+                <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="{{static_url}}/js/jquery.min.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/{{control}}.js"></script>
+	</body>
+</html>

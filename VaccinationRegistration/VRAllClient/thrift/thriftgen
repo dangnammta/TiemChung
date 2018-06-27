@@ -1,0 +1,6 @@
+rm gen-cpp/*
+../../thrift/thrift9/thrift -r --gen cpp:pure_enums vrregistrationmanagerservice.thrift
+../../thrift/thrift9/thrift -r --gen cpp:pure_enums vreventmanagerservice.thrift
+
+../../thrift/thrift9/thrift -r --gen cpp:pure_enums vrcentremanagerservice.thrift
+rm gen-cpp/*skele*

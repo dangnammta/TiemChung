@@ -1,0 +1,5 @@
+rm gen-java/*
+
+../../thrift/thrift9/thrift -r --gen java:pure_enums vrregistrationmanagerservice.thrift
+../../thrift/thrift9/thrift -r --gen java:pure_enums vreventmanagerservice.thrift
+../../thrift/thrift9/thrift -r --gen java:pure_enums vrcentremanagerservice.thrift

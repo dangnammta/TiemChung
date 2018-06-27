@@ -1,0 +1,1 @@
+../../VRVaccinationManagerService/thrift/vrvaccinationmanagerservice.thrift

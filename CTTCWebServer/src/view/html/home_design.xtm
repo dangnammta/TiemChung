@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="html" lang="en-US">
+	<head>
+		<script type="text/javascript">
+			if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["jquery-1.8.3.min.js", "museutils.js", "jquery.watch.js", "index.css"], "outOfDate":[]};
+		</script>
+                <link rel="shortcut icon" href="{{static_url}}/image/favicon.ico" type="image/x-icon">
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="2014.2.1.284"/>
+		<title>HƯỚNG DẪN ĐĂNG KÝ TIÊM CHỦNG</title>
+                <link href="{{static_url}}/css/bootstrap.min.css" rel="stylesheet">
+                <link href="{{static_url}}/css/bootstrap-dialog.css" rel="stylesheet">
+                <link href="{{static_url}}/css/tiemchung.css" rel="stylesheet">
+		<style type="text/css">
+			body {background-color: #e6e6e6}
+			.container {
+				width:1000px;
+				margin:0px auto;
+				background-color:white;
+				}
+			
+		</style>
+
+	</head>
+	<body>
+            <div style="display:none;" class="loading">Loading&#8230;</div>
+		<div class="container">
+			<div class="header">
+				<a href="/"><img  id="banner" src="{{static_url}}/image/Banner.png"/></a>
+			</div>
+			<div class="navbar_design">
+				<span class="navbtn " id="info"><a href="javascript:void(0);">HƯỚNG DẪN ĐĂNG KÝ TIÊM CHỦNG</a></span>
+			</div>
+			<div class="main">
+				<form class="vacform" method="post">
+				<table class="tg">
+				  <tr style="height: 60px;">
+					<th style="text-align:center; padding-top:25px;" class="tg-title" colspan="2">
+						<span  class="title1">HƯỚNG DẪN ĐĂNG KÝ TIÊM CHỦNG VẮC-XIN PENTAXIM</span>
+					</th>
+					<th class="tg-rnoti" rowspan="13">
+						<img style="padding-bottom:5px;" width="370px;" height="270px;" id="sideimg" src="{{static_url}}/image/img.jpg"  /><br/>
+                                                <img width="370px;" height="270px;" id="sideimg" src="{{static_url}}/image/IMG_0661.jpg"  /><br/>
+					</th>
+				  </tr>
+				  <tr>
+					<td style="text-align: justify; width: 500px; font-size:14px; vertical-align: top;">
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp; Để đảm bảo triển khai tiêm chủng vắc xin Pentaxim – Pháp an toàn và hiệu quả. Cha/mẹ cần lưu ý thực hiện các hướng dẫn sau đây:</p>
+                                        <p>1.  Không đăng ký tiêm vắc xin Pentaxim (5 trong 1) trực tiếp tại cơ sở tiêm chủng. Việc đăng ký được thực hiện trực tuyến qua mạng Internet (website).</p>
+                                        <p style="color:red; font-weight: 700;">2. Chỉ thực hiện tiêm chủng cho trẻ đăng ký tiêm vắc xin Pentaxim (5 trong 1) từ ≥ 2 tháng tuổi đến ≤  24 tháng tuổi tính đến ngày đăng ký tiêm chủng.</p>
+                                        <p>3. Cha/mẹ đối chiếu lịch tiêm chủng Pentaxim của trẻ theo lịch tư vấn của bác sỹ trước khi đăng ký.</p>
+                                        <p style="color:red; font-weight: 700;">4.Thời gian đăng ký tiêm chủng qua website: 09 giờ Thứ Sáu, ngày 09/09/2016.</p>
+                                        <p style="color:red; font-weight: 700;">Theo địa chỉ: dangkynhitw.org.vn</p>
+                                         <p>(Chú ý: Tuyệt đối không đăng ký vào đường link trực tiếp trên website của bệnh viện. Đường link đăng ký tiêm vắc xin Pentaxim sẽ tự động đóng lại khi hết vắc xin).</p>
+                                        <p style="color:red; font-weight: 700;">5. Thời gian tiêm Pentaxim sẽ bắt đầu từ 08 giờ Thứ Hai, ngày 12/09/2016. </p>
+                                        <p>Mỗi ngày tiêm 40 liều và được chia làm 2 buổi:</p>
+                                        <ul>
+                                        <li>Sáng: 08h00 đến 11h00.</li>
+                                        <li>Chiều: 13h30 đến 16h00.</li>
+                                        </ul>
+                                        <p>6. Đưa trẻ đi tiêm theo ngày, giờ hẹn tiêm đã được in trên phiếu hẹn tiêm chủng. </p>
+                                        <p style="font-style: italic;">Các hình thức: mang theo phiếu hẹn tiêm chủng hoặc ảnh chụp mã số và màn hình đăng ký hoặc ghi nhớ mã số đăng ký tiêm chủng thành công đều được chấp nhận.</p>
+                                        <p style="font-style: italic;">Khi đưa trẻ đi tiêm chủng mang theo CMND hoặc hộ chiếu; Giấy khai sinh hoặc giấy chứng sinh (không cần công chứng); Sổ tiêm chủng của trẻ. </p>
+                                        <p>7. Không đưa trẻ đến tiêm vắc xin Pentaxim (5 trong 1) khi chưa có phiếu hẹn tiêm.</p>
+                                        <p style="text-align:center; font-weight: 700;">TRƯỜNG HỢP KHÔNG ĐỦ ĐIỀU KIỆN TIÊM CHỦNG</p>
+                                        <p>1. Trẻ đến tiêm chủng phải tuân thủ quy trình sàng lọc trước khi tiêm. Các trường hợp không đạt tiêu chuẩn sàng lọc trước khi tiêm sẽ không được chấp nhận tiêm chủng.</p>
+                                        <p style="font-weight: 700;">2. Phiếu hẹn tiêm chủng chỉ có giá trị trong buổi hẹn. Các trường hợp không mang đầy đủ giấy tờ theo quy định sẽ không được chấp nhận.</p>
+                                        <p style="font-style: italic;">Để biết thêm thông tin chi tiết, xin quý khách hàng vui lòng liên hệ theo số điện thoại tư vấn tiêm chủng: 0462770895 - 0904895495 (hoạt động  từ thứ 2 đến thứ 6 hàng tuần, sáng: 7h30-11h30; chiều: 13h30-16h30).</p>
+                                    </td>
+				  </tr>
+				  <tr>
+                                    <h1  id="limit_message" {{show_limit}}>Đã hết số lượng đăng ký. Quý khách vui lòng liên hệ đăng ký tại cơ sở tiêm chủng khác. Cảm  ơn quý khách!</h1>
+					<td  id="btn_registration"  {{hide_register}}  class="tg-btn" colspan="2">
+                                                <input id="registration_pepole" class="submit-button formvacbtn" type="button" value="Đăng ký" />
+							
+					</td>
+				  </tr>
+				</table>
+			</div>
+			<div style="font-family: helvetica,serif;" class="footer col-lg-12">
+                            <div style=" float: left; ">
+                                <p>&copy; 2015 - BỆNH VIỆN NHI TRUNG ƯƠNG <br>Địa chỉ: 18/879 La Thành - Đống Đa - Hà Nội <br>Điện thoại: (84.4) 6 273 8573  - Fax: (84.4) 6 273 8573 <br></p>
+                            </div>
+                            <div style=" float:right; ">
+                                <div style="text-align:left;">
+                                    <p>PHÒNG TƯ VẤN VÀ TIÊM CHỦNG VẮC XIN<br>Địa chỉ: Ngõ 80, phố Chùa Láng, Hà Nội
+                                    (Qua cổng số 3)<br>Điện thoại liên hệ:(84.4) 62770895 &ndash; 090489495</p>
+                                </div>
+                            </div>
+                        </div>
+		</div>
+
+<script src="{{static_url}}/js/jquery.min.js"></script>
+<script src="{{static_url}}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{static_url}}/js/bootstrap-dialog.min.js"></script>
+<script type="text/javascript" src="{{static_url}}/js/tiemchung.js"></script>
+<script type="text/javascript">
+    document.getElementById("registration_pepole").onclick = function () {
+        tc.getEventStatus();
+    };
+
+</script>
+	</body>
+</html>

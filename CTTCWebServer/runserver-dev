@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# Startup script for Main
+
+export apppath=.
+export INCLUDE=$apppath/cmd/service.in.sh
+export JMXHOST=localhost
+export JMXPORT=29996
+export APPENV=development
+export XMS=512M
+pid_file=$apppath/tmp/service-dev.pid
+log_file=$apppath/tmp/service-dev.log
+
+case "$1" in
+    start)
+        # Main startup
+        echo -n "Starting crawler web service: "
+
+        $apppath/cmd/service -p $pid_file > $log_file 2>&1
+        echo "OK"
+        ;;
+    stop)
+        # Main shutdown
+        echo -n "Shutting down Crawler web service: "
+        kill `cat $pid_file`
+        echo "OK"
+        ;;
+    reload|restart)
+        $0 stop
+        $0 start
+        ;;
+    status)
+        ;;
+    *)
+        echo "Usage: `basename $0` start|stop|restart|reload"
+        exit 1
+esac
+
+exit 0
+
+# vi:ai sw=4 ts=4 tw=0 et
+

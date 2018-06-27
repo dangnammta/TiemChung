@@ -1,0 +1,13 @@
+./flogservice --daemon
+./vrstepcounterservice --daemon
+./vrcommonstoreservice --daemon
+./vrdailyinjectionsstoreservice --daemon
+./vrdailyregistrationsstoreservice --daemon
+./vrregistrationinfostoreservice --daemon
+./vrregistrationcodesstoreservice --daemon
+./vrcentreinfostoreservice --daemon
+./vreventinfostoreservice --daemon
+./vrvaccineinfostoreservice --daemon
+./vrcentremanagerservice --daemon
+./vrregistrationmanagerservice --daemon
+./vreventmanagerservice --daemon

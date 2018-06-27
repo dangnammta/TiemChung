@@ -1,0 +1,5 @@
+STATIC_FOLDER="/usr/share/nginx/html/tc/"
+
+sudo cp -r ./html/tc/* $STATIC_FOLDER
+sudo cp vaccine.conf /etc/nginx/conf.d/
+sudo service nginx restart

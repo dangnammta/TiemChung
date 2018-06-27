@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!--<link rel="icon" href="../../favicon.ico">-->
+        <title>Tạo đợt tiêm chủng mới</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{{static_url}}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrap-dialog.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/select2-bootstrap.css" rel="stylesheet">
+        <link href="{{static_url}}/css/tiemchung.css" rel="stylesheet">
+        <!-- Include Bootstrap Datepicker -->
+        <link rel="stylesheet" href="{{static_url}}/css/datepicker.css" />
+    </head>
+
+    <body>
+
+        <div style="display:none;" class="loading">Loading&#8230;</div>
+        <div id="wrapper">
+			<div class="header_ts"><div class="header_wrap"><div class="header_logo1"><h1 class="header_h"><a href="#" class="header_logo"></a></h1></div></div></div>
+            <div id="page-wrapper" style="min-height: 368px; margin:0px;">
+                <div class="row">
+                   <div class="col-lg-12">
+                      <h1 id="header_register" class="page-header">Admin tạo đợt tiêm chủng mới</h1>
+                   </div>
+                   <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+
+                    <!-- edit form column -->
+                    <div class="col-lg-10 col-lg-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Thông tin đợt tiêm:
+                        </div>
+                        <div class="panel-body">
+                            <div class="row"><div  class="col-lg-6" style="margin-top:25px;">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group" >
+                                    <label class="col-lg-6 control-label">Tên đợt tiêm chủng:</label>
+                                    <div class="col-lg-6">
+                                        <input id="val_event_name" class="form-control" value="" placeholder="Nhập tên đợt tiêm chủng" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                      <label class="col-lg-6 control-label">Loại Vắcxin:</label>
+                                      <div class="col-lg-6">
+                                        <div class="ui-select">
+                                          <select  id="val_vaccine" class="form-control">
+                                            {{VACCINES}}
+                                            
+                                          </select>
+                                        </div>
+                                      </div>
+                                      
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-lg-6 control-label"></label>
+                                        <div class="col-lg-6">
+                                            <input onclick="tc_event.addVaccine({{CENTREID}});" class="btn btn-primary" value="Thêm Vacxin" type="button">
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-6 control-label">Thời gian bắt đầu đăng ký:</label>
+                                    <div class="col-lg-6 date">
+                                        <div class="input-group input-append date" id="datetimepicker_starttime" data-date-format="dd-mm-yyyy hh:ii">
+                                            <input id="val_startTimeRegistration" type="text" class="input-sm form-control" placeholder="Nhập thời gian đăng ký" />
+                                            <span  class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" >
+                                    <label class="col-lg-6 control-label">Ngày bắt đầu tiêm:</label>
+                                    <div class="col-lg-6 date">
+                                        <div class="input-group input-append date" id="datetimepicker_injetiontime" data-date-format="dd-mm-yyyy">
+                                            <input id="val_startTimeInjection" type="text" class="input-sm form-control" placeholder="Nhập ngày bắt đầu tiêm"/>
+                                            <span  class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-6 control-label">Tổng số liều tiêm:</label>
+                                    <div class="col-lg-6">
+                                        <input id="val_totalOfDoses" class="form-control" value="" placeholder="Nhập tổng số liều tiêm" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-6 control-label">Tổng số liều tiêm trong một ngày:</label>
+                                    <div class="col-lg-6">
+                                        <input id="val_totalOfDay" class="form-control" value="" type="text" placeholder="Nhập tổng số liều trong ngày">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div  class="col-lg-6">
+                            <h3>Khung giờ làm việc:</h3>
+                            <form  role="form">
+                                
+                                <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-5 date" >
+                                        <div class="input-group input-append date" id="datetimepicker_working_start" data-date-format="hh:ii">
+                                            <input id="val_workingstart" type="text" class="input-sm form-control" placeholder="chọn giờ bắt đầu"/>
+                                            <span  class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                        </div>
+                                    </div>
+                                    <label class="col-lg-1 control-label"  >đến</label>
+                                    <div class="col-lg-5 date" >
+                                        <div class="input-group input-append date" id="datetimepicker_working_end" data-date-format="hh:ii">
+                                            <input id="val_workingend" type="text" class="input-sm form-control" placeholder="chọn giờ kết thúc"/>
+                                            <span  class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                        <input onclick="tc_event.addWorkingTime();" class="btn btn-primary" value="Thêm khung giờ" type="button">
+                                </div>
+                                <div class="form-group">
+                                                <div style="width: 100%; " id="contain_working_time" class="select2-container select2-container-multi select2">
+                                                   <ul class="select2-choices" style=" height: auto; max-height: 80px; overflow-x: hidden;"  id="ul_working_time">
+                                                    
+                                                      </ul>
+                                                </div>
+                                </div>
+                            </div>
+                            </form>
+                               <div  class="col-lg-6">
+                                <h3>Đăng ký ngày nghỉ:</h3>
+                                <form role="form">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="date col-lg-7">
+                                            <div class="input-group input-append date" id="datetimepicker_holiday" data-date-format="dd/mm/yyyy">
+                                                <input id="val_holiday" type="text" class="input-sm form-control" placeholder="Nhập ngày nghỉ"/>
+                                                <span  class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox-inline" >
+                                                    <label class="checkbox-inline">
+                                                    <input type="checkbox" checked value="option1" id="holiday_saturday" name="optionsRadiosInline">Làm việc ngày thứ 7
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option1" id="holiday_sunday" name="optionsRadiosInline">Làm việc ngày chủ nhật
+                                                    </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                            <input onclick="tc_event.addHoliday();" class="btn btn-primary" value="Thêm ngày nghỉ" type="button">
+                                </div>
+                                <div class="form-group">
+                                        <div style="width: 100%; " id="contain_holiday" class="select2-container select2-container-multi select2">
+                                           <ul class="select2-choices" style=" height: auto; max-height: 80px; overflow-x: hidden;" id="ul_holiday">
+
+                                              </ul>
+                                        </div>
+                                </div>
+                                
+                            </form>
+                            </div></div>
+                            <div class="row" style="text-align:center">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input onclick="tc_event.createEvent({{CENTREID}});" class="btn btn-primary" value="Đăng ký" type="button">
+                                        <span></span>
+                                        <input onclick="tc_event.cancelCreateEvent({{CENTREID}});" class="btn btn-default" value="Hủy bỏ" type="reset">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    </div>
+                    
+                </div>
+                <!-- end div page-wrapper -->
+            </div>
+        </div>
+        <div style="text-align: center; margin:20px;">
+            <p>Copyright  © CRD-HN</p>
+        </div>
+        <!-- Bootstrap core JavaScript ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{static_url}}/js/jquery.min.js"></script>
+        <script src="{{static_url}}/js/bootstrap.min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="{{static_url}}/js/html5shiv.min.js"></script>
+            <script type="text/javascript" src="{{static_url}}/js/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="{{static_url}}/js/bootstrap-dialog.min.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/moment-with-locales.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/datepicker.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/tiemchung_event.js"></script>
+
+        <script type="text/javascript">
+        $('#datetimepicker_starttime').datetimepicker({
+                  //  locale: 'ru',
+                    format: 'DD/MM/YYYY HH:mm'
+                });
+        $('#datetimepicker_injetiontime').datetimepicker({
+                    format: 'DD/MM/YYYY'
+                });
+        $('#datetimepicker_working_start').datetimepicker({
+                    format: 'HH:mm',
+                    useCurrent: false
+                });
+        $('#datetimepicker_working_end').datetimepicker({
+                    format: 'HH:mm'
+                });
+        $("#datetimepicker_working_start").on("dp.change", function (e) {
+            $('#datetimepicker_working_end').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker_working_end").on("dp.change", function (e) {
+            $('#datetimepicker_working_start').data("DateTimePicker").maxDate(e.date);
+        });
+        $('#datetimepicker_holiday').datetimepicker({
+                    format: 'DD/MM/YYYY'
+                });
+
+        </script>
+    </body>
+</html>

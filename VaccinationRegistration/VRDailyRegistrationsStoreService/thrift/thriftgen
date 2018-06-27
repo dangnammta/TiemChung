@@ -1,0 +1,5 @@
+rm gen-cpp/*
+
+../../thrift/thrift9/thrift -r --gen cpp:pure_enums vrdailyregistrationsstoreservice.thrift
+
+rm gen-cpp/*skele*

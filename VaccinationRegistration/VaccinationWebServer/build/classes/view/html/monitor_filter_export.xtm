@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="{{static_url}}/image/favicon.ico" type="image/x-icon">
+        <title>Xuất danh sách đăng ký tiêm chủng</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{{static_url}}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrap-dialog.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/tiemchung.css" rel="stylesheet">
+        <!-- Include Bootstrap Datepicker -->
+        <link rel="stylesheet" href="{{static_url}}/css/datepicker.css" />
+    </head>
+
+    <body style="background:#fff;">
+
+        <div style="display:none;" class="loading">Loading&#8230;</div>
+        <div id="wrapper">
+            <div class="header_ts"><div class="header_wrap">
+                <div class="header_logo1"><h1 class="header_h"><a href="/" class="header_logo"></a></h1></div>
+                <span class="language"><span  class="navbtn"><a href="javascript:void(0);" onclick="logout();">{{username}} | Thoát</a></span></span>
+            </div></div>
+            <div id="page-wrapper" style="min-height: 368px;  margin: 0px;">
+                 <div class="row">
+                   <div class="col-lg-12">
+                      <h1 class="page-header">Danh sách trẻ đăng ký tiêm chủng trực tuyến thành công</h1>
+                   </div>
+                   <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            <div class="row" style="margin:0 40px;">
+               <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-content" style="display: block;">
+                            <div role="grid" class="dataTables_wrapper" id="DataTables_Table_0_wrapper">
+                                <div class="row">
+                                            <div class="col-md-3">
+                                                <div id="DataTables_Table_0_length" class="dataTables_length">
+                                                    <label>
+                                                        <a id="export2excel" href="javascript:void(0);" onclick="tc.exportToExcel();" class="btn btn-primary">
+                                                            <i class="fa fa-file-excel-o icon-white"></i>
+                                                            Xuất Excel
+                                                        </a>
+                                                    </label>
+                                                    <label style="display:none;">
+                                                        <a  href="javascript:void(0);" onclick="tc.print('tbl_import');" class="btn btn-primary">
+                                                         <i class="fa fa-print icon-white"></i>
+                                                         In danh sách
+                                                         </a>
+                                                     </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9" style="text-align: left;">
+                                                <div class="dataTables_filter">
+                                                    <label>Ngày bắt đầu: <input type="text" value="" onblur="if(this.value=='')this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value='';"  id="val_time_start"></label>
+                                                    <label>đến ngày: <input type="text" value="" onblur="if(this.value=='')this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value='';" id="val_time_end"></label>
+                                                    <a href="javascript:void(0);" onclick="tc.filter();" class="btn btn-primary">
+                                                            <i class="fa fa-filter icon-white"></i>
+                                                            Lọc
+                                                        </a>
+                                                        <a id="refresh_search"  href="javascript:void(0);" onclick="tc.refreshSearch();" class="btn btn-default">
+                                                            <i class="fa fa-refresh icon-white"></i>
+                                                            Làm mới
+                                                        </a>
+                                                </div>
+                                                <div class="dataTables_filter" >
+                                                    <label>Trạng thái: </label>
+                                                    <label class="radio-inline">
+                                                    <input type="radio" checked value="option1" id="filter_all" name="optionsRadiosInline">Tất cả
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                    <input type="radio" value="option1" id="vaccinated" name="optionsRadiosInline">Đã tiêm
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" value="option2" id="registed" name="optionsRadiosInline">Chưa tiêm
+                                                    </label>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                <table id="tbl_import" class="table table-striped table-bordered table-hover" style="margin-top:10px; border: 1px solid #e7e7e7;">
+                                    <thead>
+                                      <tr>
+                                        <th>STT</th>
+                                        <th>Họ tên trẻ</th>
+                                        <th>Ngày sinh</th>
+                                        <th>Người đưa trẻ đi tiêm</th>
+                                        <th>CMND/Hộ chiếu</th>
+                                        <th>Mã đăng ký</th>
+                                        <th>Thời gian tiêm</th>
+                                        <th>Trạng thái</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="content_tiemchung">
+                                    </tbody>
+                                </table>
+                                <div class="row" style="display:none;" id="messageSearch"><br><p style="magin:20px;" ><b>Không tìm thấy kết quả!</b></p><br></div>
+                                <div class="row">
+                                    <div class="col-md-12 center-block">
+                                        <div class="dataTables_paginate paging_bootstrap pagination">
+                                            <ul class="pagination">
+                                                <li id="previous_page" class="prev disabled"><a href="javscript:void(0);" onclick="tc.previousPage(); return false;">← Previous</a></li>
+                                                <li id="next_page" class="next disabled"><a href="javscript:void(0);" onclick="tc.nextPage(); return false;">Next → </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end div class=row -->
+                            </div>
+                      </div>
+                   </div>
+                   <!-- /.col-lg-12 -->
+                </div>
+                
+
+                <!-- end div page-wrapper -->
+            </div>
+        </div>
+        <div style="font-family: helvetica,serif;" class="footer col-lg-12">
+            <div style=" float: left; ">
+                <p>&copy; 2015 - BỆNH VIỆN NHI TRUNG ƯƠNG <br>Địa chỉ: 18/879 La Thành - Đống Đa - Hà Nội <br>Điện thoại: (84.4) 6 273 8573  - Fax: (84.4) 6 273 8573 <br></p>
+            </div>
+            <div style=" float:right; ">
+                <div style="text-align:left;">
+                    <p>PHÒNG TƯ VẤN VÀ TIÊM CHỦNG VẮC XIN<br>Địa chỉ: Ngõ 80, phố Chùa Láng, Hà Nội
+                    (Qua cổng số 3)<br>Điện thoại liên hệ:(84.4) 62770895 &ndash; 090489495</p>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{static_url}}/js/jquery.min.js"></script>
+        <script src="{{static_url}}/js/bootstrap.min.js"></script>
+        <script src="{{static_url}}/js/jszip4exel.js"></script>
+        <script src="{{static_url}}/js/underscore.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="{{static_url}}/js/html5shiv.min.js"></script>
+            <script type="text/javascript" src="{{static_url}}/js/respond.min.js"></script>
+        <![endif]-->
+        
+        <script type="text/javascript" src="{{static_url}}/js/export2excel.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/bootstrap-dialog.min.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/tiemchung_monitor_export.js"></script>
+        <script>
+$(document).ready(function() {
+tc.getlistMonitorForPepole();
+});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!--<link rel="icon" href="../../favicon.ico">-->
+        <title>Danh sách đăng ký tiêm chủng</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{{static_url}}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrap-dialog.css" rel="stylesheet">
+        <link href="{{static_url}}/css/metisMenu.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrapstart.css" rel="stylesheet">
+        <link href="{{static_url}}/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/tiemchung.css" rel="stylesheet">
+        <!-- Include Bootstrap Datepicker -->
+        <link rel="stylesheet" href="{{static_url}}/css/datepicker.css" />
+    </head>
+
+    <body>
+
+        <div style="display:none;" class="loading">Loading&#8230;</div>
+        <div id="wrapper">
+            <div class="header_ts"><div class="header_wrap"><div class="header_logo1"><h1 class="header_h"><a href="#" class="header_logo"></a></h1></div></div></div>
+            <div id="page-wrapper" style="min-height: 368px; margin:0px;">
+                 <div class="row">
+                   <div class="col-lg-12">
+                      <h1 class="page-header">Danh sách trẻ đăng ký tiêm chủng trực tuyến thành công</h1>
+                   </div>
+                   <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row" style="margin-left:40px;  margin-right:40px;">
+                   <div class="col-lg-12">
+                      <div class="panel panel-default">
+                            <div class="panel-body">
+                                <table id="tbl_import" class="table">
+                                    <thead>
+                                      <tr>
+                                        <th>#</th>
+                                        <th>Họ và tên Trẻ</th>
+                                        <th>Người đưa trẻ đi tiêm</th>
+                                        <th>CMTND</th>
+                                        <th>Thời gian đăng ký</th>
+                                        <th>Thời gian Tiêm(dự kiến)</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="monitor_tiemchung">
+                                       <tr>
+                                           <th scope="row">1</th>
+                                           <td>Đặng Thái Sơn</td>
+                                           <td>Đặng Văn Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">2</th>
+                                           <td>Phạm Khôi Nguyên</td>
+                                           <td>Phạm Minh Tuấn</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">3</th>
+                                           <td>Mỵ Duy Khôi</td>
+                                           <td>Mỵ Duy Long</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">4</th>
+                                           <td>Trần Thái Bảo</td>
+                                           <td>Phạm Hải Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">5</th>
+                                           <td>Đặng Thái Sơn</td>
+                                           <td>Đặng Văn Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">6</th>
+                                           <td>Đặng Thái Sơn</td>
+                                           <td>Đặng Văn Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">7</th>
+                                           <td>Đặng Thái Sơn</td>
+                                           <td>Đặng Văn Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">8</th>
+                                           <td>Đặng Thái Sơn</td>
+                                           <td>Đặng Văn Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">9</th>
+                                           <td>Đặng Thái Sơn</td>
+                                           <td>Đặng Văn Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">10</th>
+                                           <td>Đặng Thái Sơn</td>
+                                           <td>Đặng Văn Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                       <tr>
+                                           <th scope="row">11</th>
+                                           <td>Đặng Thái Sơn</td>
+                                           <td>Đặng Văn Nam</td>
+                                           <td>112233123</td>
+                                           <td>12/12/2015</td>
+                                           <td>30/12/2015</td>
+                                       </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                         <!-- /.panel-body -->
+
+                      </div>
+                      <!-- /.panel -->
+                   </div>
+                   <!-- /.col-lg-12 -->
+                </div>
+                
+
+                <!-- end div page-wrapper -->
+            </div>
+        </div>
+        <div style="text-align: center; margin:20px;">
+            <p>Copyright  © CRD-HN</p>
+        </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{static_url}}/js/jquery.min.js"></script>
+        <script src="{{static_url}}/js/bootstrap.min.js"></script>
+        <script src="{{static_url}}/js/metisMenu.min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="{{static_url}}/js/html5shiv.min.js"></script>
+            <script type="text/javascript" src="{{static_url}}/js/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="{{static_url}}/js/bootstrap-dialog.min.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/framework_bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/moment-with-locales.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/datepicker.js"></script>
+        
+
+        <script type="text/javascript" src="{{static_url}}/js/tiemchung.js"></script>
+        <script>
+$(document).ready(function() {
+});
+        </script>
+    </body>
+</html>

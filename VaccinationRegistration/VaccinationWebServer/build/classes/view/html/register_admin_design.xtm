@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="html" lang="en-US">
+	<head>
+		<script type="text/javascript">
+			if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["jquery-1.8.3.min.js", "museutils.js", "jquery.watch.js", "index.css"], "outOfDate":[]};
+		</script>  
+                <link rel="shortcut icon" href="{{static_url}}/image/favicon.ico" type="image/x-icon">
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<meta name="generator" content="2014.2.1.284"/>
+		<title>Đăng ký tiêm chủng</title>
+                <!-- Bootstrap core CSS -->
+        <link href="{{static_url}}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrap-dialog.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/tiemchung.css" rel="stylesheet">
+		<style type="text/css">
+			body {background-color: #e6e6e6}
+			.container {
+				width:1000px;
+				margin:0px auto;
+				background-color:white;
+				}
+			
+		</style>
+	</head>
+	<body>
+        <div style="display:none;" class="loading">Loading&#8230;</div>
+            <div id="wrapper">
+		<div class="container">
+			<div class="header">
+				<a href="/"><img  id="banner" src="{{static_url}}/image/Banner.png"/></a>
+                                
+			</div>
+			<div class="navbar_design">
+				<span class="navbtn" id="vacreg"><a href="javascript:void(0);">ĐĂNG KÝ TIÊM CHỦNG VẮCXIN BỔ SUNG</a></span>
+                                <span class="language">
+                                    <span  class="navbtn"><a  href="/admin/monitor">Quản lý danh sách</a></span>
+                                    <span style="margin-right:10px;" class="navbtn"><a href="javascript:void(0);" onclick="logout();">{{username}} | Thoát</a></span>
+                                </span>
+			</div>
+			<div class="main">
+				<form class="vacform" method="post">
+				<table class="tg">
+				  <tr>
+					<th class="tg-title" colspan="2" style="font-size:13px;">
+						Quý phụ huynh lưu ý nhập đầy đủ tất cả các thông tin dưới đây
+					</th>
+					<th class="tg-rnoti" rowspan="13">
+						<img  width="370px;" height="270px;" id="sideimg" src="{{static_url}}/image/img.jpg" /><br/>
+						<div style="text-align: justify; margin:20px;  ">        
+                                        <p>Quý khách cần nhập đầy đủ, chính xác các thông tin sau:</p>
+                                        <ul>
+                                            <li>Họ và tên của trẻ (theo giấy khai sinh/giấy chứng sinh)</li>
+                                            <li>Ngày sinh của trẻ</li>
+                                            <li>Họ và tên của người đưa trẻ đi tiêm chủng</li>
+                                            <li>Số CMND/Hộ chiếu</li>
+                                            <li>Số ĐT liên hệ của người đưa trẻ đi tiêm chủng</li>
+                                            <li>Địa chỉ (sử dụng tiếng Việt có đấu)</li>
+                                       </ul>
+                                       </div>
+					</th>
+				  </tr>
+				  <tr>
+					<td class="tg-form">
+						<span class="title1">Chọn vắc xin</span>
+					</td>
+					<td class="tg-form">
+                                                <select  id="val_vaccine" class="formvac" aria-labelledby="formVacxin-ariaLabel">
+                                                    <option value="Pentaxim" selected>Pentaxim</option>
+                                                </select>
+						
+					</td>
+				  </tr>
+				  <tr>
+					<td class="tg-blank" colspan="2"></td>
+				  </tr>
+				  <tr>
+					<td class="tg-form" colspan="2">
+						<span class="title1">Thông tin trẻ</span>
+					</td>
+				  </tr>
+				  <tr>
+					<td class="tg-desc">Họ và tên (theo giấy khai sinh/giấy chứng sinh):</td>
+					<td class="tg-form"><input class="formvac" id="val_namechild" type="text" /><span style="color:red">(*)</span></td>
+				  </tr>
+				  <tr>
+					<td class="tg-desc">Ngày tháng năm sinh:</td>
+					<td class="tg-form"><input class="formvac" id="val_birthdaychild" /><span style="color:red">(*)</span></td>
+				  </tr>
+                                  <tr>
+					<td class="tg-desc"></td>
+                                        <td class="tg-form">(Trẻ phải trong độ tuổi tiêm chủng: 2 tháng – 24 tháng.<br> Nhập Theo định dạng ngày/tháng/năm ví dụ: 20/12/2015)</td>
+				  </tr>
+				  <tr>
+					<td class="tg-blank" colspan="2"></td>
+				  </tr>
+				  <tr>
+					<td class="tg-form" colspan="2">
+						<span class="title1">Thông tin người đưa trẻ đi tiêm (phụ huynh, người giám hộ)</span>
+					</td>
+				  </tr>
+				  <tr>
+					<td class="tg-desc">Họ và tên:</td>
+					<td class="tg-form"><input class="formvac" id="val_name_parent" name="txt_formName" type="text" aria-labelledby="formName-ariaLabel" /><span style="color:red">(*)</span></td>
+				  </tr>
+				   <tr>
+					<td class="tg-desc">Số CMND/Hộ chiếu:</td>
+					<td class="tg-form"><input class="formvac" id="val_cmtnd_parent" name="txt_formIDCard" type="text" aria-labelledby="formIDCard-ariaLabel" /><span style="color:red">(*)</span></td>
+				  </tr>
+				   <tr>
+					<td class="tg-desc">Điện thoại liên lạc:</td>
+					<td class="tg-form"><input class="formvac" id="val_phone_parent" name="txt_formTelNo" type="text" aria-labelledby="formTelNo-ariaLabel" /><span style="color:red">(*)</span></td>
+				  </tr>
+                                  <tr style="display:none;">
+					<td class="tg-desc">Email:</td>
+					<td class="tg-form"><input class="formvac" id="val_email_parent" name="txt_formTelNo" type="text" aria-labelledby="formTelNo-ariaLabel" /></td>
+				  </tr>
+                                  <tr>
+					<td class="tg-desc">Địa chỉ:</td>
+					<td class="tg-form"><textarea class="formvac" id="val_address" name="txt_FormCaptcha"  rows="3"></textarea><span style="color:red">(*)</span></td>
+				  </tr>
+                                  <tr>
+					<td class="tg-desc">Ngày tiêm:</td>
+					<td class="tg-form"><input class="formvac" id="val_vaci_day" /><span style="color:red">(*)</span></td>
+				  </tr>
+                                  <tr>
+					<td class="tg-desc">Thời gian tiêm:</td>
+					<td class="tg-form"><select  id="val_injection_time" class="formvac" aria-labelledby="formVacxin-ariaLabel">
+                                                    {{option_time_injection}}
+                                                </select><span style="color:red">(*)</span></td>
+				  </tr>
+				  <tr>
+					<td class="tg-blank" colspan="2"></td>
+				  </tr>
+				  
+				  <tr>
+					<td style="text-align:right;" class="tg-btn" colspan="2">
+                                                <input onclick="tc.registerAdmin(); return false;" class="submit-button formvacbtn" type="button" value="Đăng ký" />
+							
+					</td>
+				  </tr>
+				</table>
+			</div>
+			<div style="font-family: helvetica,serif;" class="footer col-lg-12">
+                            <div style=" float: left; ">
+                                <p>&copy; 2015 - BỆNH VIỆN NHI TRUNG ƯƠNG <br>Địa chỉ: 18/879 La Thành - Đống Đa - Hà Nội <br>Điện thoại: (84.4) 6 273 8573  - Fax: (84.4) 6 273 8573 <br></p>
+                            </div>
+                            <div style=" float:right; ">
+                                <div style="text-align:left;">
+                                    <p>PHÒNG TƯ VẤN VÀ TIÊM CHỦNG VẮC XIN<br>Địa chỉ: Ngõ 80, phố Chùa Láng, Hà Nội
+                                    (Qua cổng số 3)<br>Điện thoại liên hệ:(84.4) 62770895 &ndash; 090489495</p>
+                                </div>
+                            </div>
+                        </div>
+		</div>
+         </div>
+                <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{static_url}}/js/jquery.min.js"></script>
+        <script src="{{static_url}}/js/bootstrap.min.js"></script>
+        <script src="{{static_url}}/js/metisMenu.min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="{{static_url}}/js/html5shiv.min.js"></script>
+            <script type="text/javascript" src="{{static_url}}/js/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="{{static_url}}/js/bootstrap-dialog.min.js"></script>
+        <script type="text/javascript" src="{{static_url}}/js/tiemchung_admin.js"></script>
+        <script>
+$(document).ready(function() {
+   // tc.getcaptcha();
+});
+        </script>
+	</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!--<link rel="icon" href="../../favicon.ico">-->
+        <title>Đăng ký tiêm chủng</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{{static_url}}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrap-dialog.css" rel="stylesheet">
+        <link href="{{static_url}}/css/bootstrapstart.css" rel="stylesheet">
+        <link href="{{static_url}}/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{static_url}}/css/tiemchung.css" rel="stylesheet">
+        <!-- Include Bootstrap Datepicker -->
+        <link rel="stylesheet" href="{{static_url}}/css/datepicker.css" />
+    </head>
+
+    <body>
+
+        <div style="display:none;" class="loading">Loading&#8230;</div>
+        <div id="wrapper">
+			<div class="header_ts"><div class="header_wrap"><div class="header_logo1"><h1 class="header_h"><a href="#" class="header_logo"></a></h1></div></div></div>
+            <div id="page-wrapper" style="min-height: 368px; margin:0px;">
+                <div class="row">
+                   <div class="col-lg-12">
+                      <h1 id="header_register" class="page-header">Đăng ký tiêm chủng trực tuyến dành cho Admin</h1>
+                   </div>
+                   <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+
+                    <!-- edit form column -->
+                    <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default" style="margin-bottom:0px; border-radius: 0px;">
+                        <div class="panel-heading">
+                            Thông tin của trẻ:
+                        </div>
+                        <div class="panel-body"> 
+                            <div class="form-group" style="margin-bottom:40px;">
+                                <label class="col-lg-5 control-label">Họ tên(theo giấy khai sinh/chứng sinh):</label>
+                                <div class="col-lg-7">
+                                    <input id="val_namechild" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group" id="sandbox-container" style="margin-bottom:78px;">
+                                <label class="col-lg-5 control-label">Ngày sinh của trẻ:</label>
+                                <div class="col-xs-5 date">
+                                    <div class="input-daterange input-group input-append date" id="datepicker">
+                                        <input id="val_birthdaychild" name="birthday" type="text" class="input-sm form-control" name="eventDate" />
+                                        <span  onclick="focusInputDate();" class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="form-group" style="margin-bottom:40px;">
+                                  <label class="col-lg-5 control-label">Loại Vắcxin:</label>
+                                  <div class="col-lg-7">
+                                    <div class="ui-select">
+                                      <select  id="val_vaccine" class="form-control">
+                                        <option value="Pentaxim" selected>Pentaxim</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Thông tin của người đưa trẻ đi tiêm:
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group" style="margin-bottom:40px;">
+                                <label class="col-lg-5 control-label">Họ và tên:</label>
+                                <div class="col-lg-7">
+                                    <input id="val_name_parent" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom:80px;">
+                                <label class="col-lg-5 control-label">Số chứng minh thư/hộ chiếu:</label>
+                                <div class="col-lg-7">
+                                    <input id="val_cmtnd_parent" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom:120px;">
+                                <label class="col-lg-5 control-label">Số điện thoại liên lạc:</label>
+                                <div class="col-lg-7">
+                                    <input id="val_phone_parent" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom:160px;">
+                                <label class="col-lg-5 control-label">Địa chỉ Email:</label>
+                                <div class="col-lg-7">
+                                    <input id="val_email_parent" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group" id="sandbox-container" style="margin-bottom:200px;">
+                                <label class="col-lg-5 control-label">Ngày tiêm(dự kiến):</label>
+                                <div class="col-xs-5 date">
+                                    <div class="input-daterange input-group input-append date" id="datepicker">
+                                        <input id="val_vaci_day" name="VacinationDay" type="text" class="input-sm form-control" name="eventDate" />
+                                        <span  onclick="focusInputDate();" class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="div_captcha" class="form-group" style="margin-bottom:260px;">
+                                <label class="col-lg-5 control-label"></label>
+                                <div class="col-lg-7">
+                                    <img id="captcha_img" src="{{url_captcha}}">
+                                    <a onclick="tc.getcaptcha(); return false;" class="btn btn-info" type="button" data-toggle="tooltip" title="Tải hình khác" href="javscript:void(0);">
+                                        <i class="fa fa-refresh fa-fw"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="div_input_captcha" class="form-group" style="margin-bottom:300px;">
+                                <label class="col-lg-5 control-label">Nhập ký tự:</label>
+                                <div class="col-lg-4">
+                                    <input id="val_captcha" class="form-control" value="" type="text">
+                                </div>
+                                
+                            </div>
+                            <div id="div_action_register" class="form-group" style="margin-bottom:330px;">
+                                <label class="col-md-4 control-label"></label>
+                                <div class="col-md-8">
+                                    <input onclick="tc.register();" class="btn btn-primary" value="Đăng ký" type="button">
+                                    <span></span>
+                                    <input onclick="cancelRegister();" class="btn btn-default" value="Hủy bỏ" type="reset">
+                                </div>
+                            </div>
+                            
+                            <div style="display:none;" id="div_key_register" class="form-group" style="margin-bottom:200px;">
+                                <label class="col-lg-5 control-label">Mã xác nhận đăng ký:</label>
+                                <h1 style="color: red;" id="key_register"></h1>
+                                
+                            </div>
+                            <div style="display:none;" id="div_action_result" class="form-group" style="margin-bottom:280px;">
+                                <label class="col-md-4 control-label"></label>
+                                <div class="col-md-8">
+                                    <input onclick="" class="btn btn-primary" value="Đồng ý" type="button">
+                                    <span></span>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+
+                        <form style="display:none;" id="eventForm" class="form-horizontal" role="form">
+                            <h3>Thông tin của trẻ:</h3>
+                            <div class="form-group">
+                                <label class="col-lg-5 control-label">Họ tên(theo giấy khai sinh/chứng sinh):</label>
+                                <div class="col-lg-7">
+                                    <input id="val_namechild" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group" id="sandbox-container">
+                                <label class="col-lg-5 control-label">Ngày sinh của trẻ:</label>
+                                <div class="col-xs-5 date">
+                                    <div class="input-daterange input-group input-append date" id="datepicker">
+                                        <input id="val_birthdaychild" name="birthday" type="text" class="input-sm form-control" name="eventDate" />
+                                        <span  onclick="focusInputDate();" class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                  <label class="col-lg-5 control-label">Loại Vắcxin:</label>
+                                  <div class="col-lg-7">
+                                    <div class="ui-select">
+                                      <select  id="val_vaccine" class="form-control">
+                                        <option value="Pentaxim" selected>Pentaxim</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                            </div>
+                            <h3>Thông tin của người đưa trẻ đi tiêm:</h3>
+                          
+                            <div class="form-group">
+                                <label class="col-lg-5 control-label">Họ và tên:</label>
+                                <div class="col-lg-7">
+                                    <input id="val_name_parent" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-5 control-label">Số chứng minh thư/hộ chiếu:</label>
+                                <div class="col-lg-7">
+                                    <input id="val_cmtnd_parent" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-5 control-label">Số điện thoại liên lạc:</label>
+                                <div class="col-lg-7">
+                                    <input id="val_phone_parent" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-lg-5 control-label">Địa chỉ Email:</label>
+                                <div class="col-lg-7">
+                                    <input id="val_email_parent" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-5 control-label"></label>
+                                <div class="col-lg-7">
+                                    <img id="captcha_img" src="{{url_captcha}}"> 
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-5 control-label">Nhập ký tự:</label>
+                                <div class="col-lg-4">
+                                    <input id="val_captcha" class="form-control" value="" type="text">
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label"></label>
+                                <div class="col-md-8">
+                                    <input onclick="tc.register();" class="btn btn-primary" value="Đăng ký" type="button">
+                                    <span></span>
+                                    <input onclick="cancelRegister();" class="btn btn-default" value="Hủy bỏ" type="reset">
+                                </div>
+                            </div>
+                                
+                        </form>
+                    </div>
+                </div>
+                <!-- end div page-wrapper -->
+            </div>
+        </div>
+        <div style=" color: #fff;  font-size: 14px; background:  #0099cc repeat scroll 0 0; float: left;  padding: 10px 45px;width: 100%;">
+            <p>&copy; 2015 - BỆNH VIỆN NHI TRUNG ƯƠNG <br>Địa chỉ: 18/879 La Thành - Đống Đa - Hà Nội <br>Điện thoại: (84.4) 6 273 8573  - Fax: (84.4) 6 273 8573 <br></p>
+        </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{static_url}}/js/jquery.min.js"></script>
+        <script src="{{static_url}}/js/bootstrap.min.js"></script>
+        <script src="{{static_url}}/js/metisMenu.min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="{{static_url}}/js/html5shiv.min.js"></script>
+            <script type="text/javascript" src="{{static_url}}/js/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="{{static_url}}/js/bootstrap-dialog.min.js"></script>
+
+        <script type="text/javascript" src="{{static_url}}/js/tiemchung.js"></script>
+        <script>
+$(document).ready(function() {
+    tc.getcaptcha();
+    function focusInputDate() {
+    $("#val_birthday").focus();
+    }   
+});
+        </script>
+    </body>
+</html>
